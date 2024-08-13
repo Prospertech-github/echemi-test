@@ -74,6 +74,8 @@ form{
 form input{
   width: 400px;
   padding: 1.5rem;
+  font-size: 1.6rem;
+  color: #444;
 }
 form input:focus{
   border: 1px solid #aaa;

